@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ark-Matic", "Ark-Matic\Ark-Matic.csproj", "{CFBAFD8C-7DE1-41DD-AD61-3DEF9D5E490D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFBAFD8C-7DE1-41DD-AD61-3DEF9D5E490D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFBAFD8C-7DE1-41DD-AD61-3DEF9D5E490D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFBAFD8C-7DE1-41DD-AD61-3DEF9D5E490D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFBAFD8C-7DE1-41DD-AD61-3DEF9D5E490D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDBFB91C-7CD8-4976-B24D-5C1375084E57}
+	EndGlobalSection
+EndGlobal
