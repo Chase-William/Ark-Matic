@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ark_Matic.Pages;
 using Ark_Matic.Data;
+using Ark_Matic.Util;
 
 namespace Ark_Matic
 {
@@ -32,6 +33,7 @@ namespace Ark_Matic
             keybd_event(key, 0, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
         }
 
+
         /// <summary>
         ///     Called when a hook (hotkey) is clicked
         /// </summary>
@@ -44,7 +46,17 @@ namespace Ark_Matic
                 switch (clickedKey)
                 {
                     case (uint)Keys.F6:
-                        var asd = StoredProtocols.Protocols.
+
+                        var timer = GeneralUtil.GetTimerFromAutoClicker(Keys.F6);
+
+                        if (timer.Enabled)
+                        {
+                            timer.Stop();
+                        }
+                        else
+                        {
+                            timer.Start();
+                        }
                         break;
                     //case (uint)Keys.F6 when !MainPage.clickTimer.Enabled:
                     //    MainPage.clickTimer.Start();

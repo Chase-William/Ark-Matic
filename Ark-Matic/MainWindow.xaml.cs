@@ -39,9 +39,9 @@ namespace Ark_Matic
         private HwndSource source;
 
 
-        /// 
+        /// <summary>
         ///     Called when the window loses focus
-        /// 
+        /// </summary>
         protected override void OnDeactivated(EventArgs e)
         {
             this.Topmost = true;
@@ -62,10 +62,10 @@ namespace Ark_Matic
             source = HwndSource.FromHwnd(windowHandle);
             source.AddHook(VirtualKeyUtil.ToggleHooks);
 
-            var clicker = new AutoClicker(windowHandle, "Testing");
+            var clicker = new AutoClicker(windowHandle, "Testing", "F6");
 
             // Testing the creation of a autoclicker as a class
-            StoredProtocols.Protocols.Add(Tuple.Create(clicker.Name, "F6"), Tuple.Create(nameof(AutoClicker), (object)clicker));
+            StoredProtocols.Protocols.Add(clicker.Name, Keys.F6, Tuple.Create(typeof(AutoClicker), (object)clicker));
 
             VirtualKeyUtil.RegisterHotKey(windowHandle, VirtualKeyUtil.HOTKEY_ID, VirtualKeyUtil.MOD_NONE, (uint)Keys.F8);
         }

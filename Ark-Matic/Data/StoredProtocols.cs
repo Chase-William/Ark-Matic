@@ -10,8 +10,8 @@ namespace Ark_Matic.Data
     {
         // Key   == Tuple < name, hotkey >
         // Value == Tuple < type, protocol >
-        public static Dictionary<Tuple<string, string>,Tuple<string, object>> Protocols = new Dictionary<Tuple<string, string>, Tuple<string, object>>();
+        public static MultiKeyDictionary<string, Keys, Tuple<Type, object>> Protocols = new MultiKeyDictionary<string, Keys, Tuple<Type, object>>();
 
-        //public static MultiKeyDictionary<>
+        
     }
 }

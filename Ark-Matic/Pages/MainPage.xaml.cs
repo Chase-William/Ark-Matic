@@ -12,6 +12,8 @@ using System.Windows.Interop;
 using MouseCursor = System.Windows.Forms.Cursor;
 using Point = System.Drawing.Point;
 using System.Windows;
+using Ark_Matic.Data;
+using Ark_Matic.Util;
 
 namespace Ark_Matic.Pages
 {
@@ -21,17 +23,17 @@ namespace Ark_Matic.Pages
     public partial class MainPage : Page, INotifyPropertyChanged
     {        
         // Delay between clicks
-        const int DELAY_BETWEEN_CLICKS = 300;
+        // const int DELAY_BETWEEN_CLICKS = 10;
         // Determines the interval of clicks (auto clicker)
 
-        public static System.Timers.Timer clickTimer = new System.Timers.Timer(DELAY_BETWEEN_CLICKS);
+        // public static System.Timers.Timer clickTimer = new System.Timers.Timer(DELAY_BETWEEN_CLICKS);
         
         // Determine the steps performed when the window is deactivated
         bool captureSearchBarLoc, captureDropAllBtnLoc;
 
         #region Screen Point Properties
 
-        public Point CurrentCursorLocation => MouseCursor.Position;
+        public static Point CurrentCursorLocation => MouseCursor.Position;
 
         private Point searchBarLocation;
         public Point SearchBarLocation
@@ -61,7 +63,7 @@ namespace Ark_Matic.Pages
         {
             InitializeComponent();
             DataContext = this;
-            clickTimer.Elapsed += TimerElapsed;
+            //clickTimer.Elapsed += TimerElapsed;
             MainWindow.OnDeactivatedExtension += delegate
             {
                 if (captureDropAllBtnLoc)
@@ -81,9 +83,9 @@ namespace Ark_Matic.Pages
         ///     Bindings required for WPF Interface 
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged([CallerMemberName] string proprtyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(proprtyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>
@@ -91,12 +93,10 @@ namespace Ark_Matic.Pages
         /// </summary>
         private void TimerElapsed(object sender, ElapsedEventArgs e)
         {
-            OnPropertyChanged(nameof(CurrentCursorLocation));
+            //OnPropertyChanged(nameof(CurrentCursorLocation));
             VirtualKeyUtil.PerformMouseClick(CurrentCursorLocation);
         }
-
-        
-
+       
         #region ALL UI Event Handlers
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Ark_Matic.Pages
         /// </summary>
         public void StartClicker(object sender, RoutedEventArgs e)
         {
-            clickTimer.Start();
+            GeneralUtil.GetTimerFromAutoClicker(Keys.F6).Start();
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Ark_Matic.Pages
         /// </summary>
         public void StopClicker(object sender, RoutedEventArgs e)
         {
-            clickTimer.Stop();
+            GeneralUtil.GetTimerFromAutoClicker(Keys.F6).Stop();
         }
 
         /// <summary>

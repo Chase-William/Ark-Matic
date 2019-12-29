@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ark_Matic.Pages;
+using System;
 using System.Timers;
 
 namespace Ark_Matic.Lang
@@ -7,6 +8,15 @@ namespace Ark_Matic.Lang
     {
         private int interval;
         private string name;
+
+        private string hotkey;
+
+        public string Hotkey
+        {
+            get { return hotkey; }
+            set { hotkey = value; }
+        }
+
 
         public string Name
         {
@@ -20,13 +30,21 @@ namespace Ark_Matic.Lang
             set { interval = value; }
         }       
 
-        public Timer Timer = new Timer();
+        public Timer Timer = new Timer(10);
 
-        public AutoClicker(IntPtr _windowHandle, string _name)
+        public AutoClicker(IntPtr _windowHandle, string _name, string _hotkey)
         {
             Name = _name;
+            Hotkey = _hotkey;
             // These would be settable by the user during creation
             VirtualKeyUtil.RegisterHotKey(_windowHandle, VirtualKeyUtil.HOTKEY_ID, VirtualKeyUtil.MOD_NONE, (uint)Keys.F6);
+
+            Timer.Elapsed += TimerElapsed;
+        }
+
+        private void TimerElapsed(object sender, ElapsedEventArgs e)
+        {
+            VirtualKeyUtil.PerformMouseClick(MainPage.CurrentCursorLocation);
         }
     }
 }
