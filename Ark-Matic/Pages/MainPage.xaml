@@ -28,8 +28,7 @@
                     </Style>
                 </StackPanel.Resources>
                 <!-- Start / Stop Btns -->
-                <Button Content="Start (F6)" Width="75" Click="StartClicker"/>
-                <Button Content="Stop (F7)" Width="75" Click="StopClicker"/>
+                <Button Content="Toggle (F6)" Width="75" Click="StartClicker"/>
                 <Button Content="Drop (F8)" Width="75" Click="DropAllButMetalAsync"/>
             </StackPanel>
 

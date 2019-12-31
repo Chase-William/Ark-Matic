@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Chase Roth\Desktop\Ark-Matic\Ark-Matic\App.xaml
-3-1946052528
+3-857642537
 
-15-382955666
+1576275214
 151397803362
-Pages\CreateDropProtocolPage.xaml;MainWindow.xaml;Pages\MainPage.xaml;
+MainWindow.xaml;Pages\CreateProtocol.xaml;Pages\MainPage.xaml;
 
-False
+True
 

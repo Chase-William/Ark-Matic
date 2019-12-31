@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Ark_Matic
+namespace Ark_Matic.Pages
 {
     /// <summary>
-    /// Interaction logic for CreateDropProtocolPage.xaml
+    /// Interaction logic for CreateProtocol.xaml
     /// </summary>
-    public partial class CreateDropProtocolPage : Page
+    public partial class CreateProtocol : Page
     {
-        public CreateDropProtocolPage()
+        public CreateProtocol()
         {
             InitializeComponent();
         }

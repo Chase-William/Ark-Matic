@@ -60,20 +60,16 @@
     <Compile Include="Data\StoredProtocols.cs" />
     <Compile Include="Lang\CustomDictionary\MultiKeyDictionary.cs" />
     <Compile Include="Lang\Protocols\AutoClicker.cs" />
-    <Compile Include="Pages\CreateDropProtocolPage.xaml.cs">
-      <DependentUpon>CreateDropProtocolPage.xaml</DependentUpon>
+    <Compile Include="Lang\Protocols\Protocol.cs" />
+    <Compile Include="Pages\CreateProtocol.xaml.cs">
+      <DependentUpon>CreateProtocol.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Lang\Protocols\DropProtocol.cs" />
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Util\GeneralUtil.cs" />
     <Compile Include="Util\VirtualKeys.cs" />
     <Compile Include="Util\VirtualKeyUtil.cs" />
-    <Page Include="Pages\CreateDropProtocolPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,6 +82,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\CreateProtocol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

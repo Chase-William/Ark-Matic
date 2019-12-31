@@ -6,7 +6,7 @@ namespace Ark_Matic.Lang
     /// <summary>
     ///     Is a protocol and contains its information
     /// </summary>
-    class DropProtocol
+    class Protocol
     {        
         List<string> items = new List<string>();
         private Point dropAllBtnLocation;
